@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D7983A4-CCFF-46F6-920F-F184A031D7E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DayPilot</RootNamespace>
+    <AssemblyName>DayPilot</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>daypilotlite.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Encoder.cs" />
+    <Compile Include="Utils\Hour.cs" />
+    <Compile Include="Utils\TimeFormatter.cs" />
+    <Compile Include="Utils\ViewStateHelper.cs" />
+    <Compile Include="Utils\ViewTypeParser.cs" />
+    <Compile Include="Utils\Week.cs" />
+    <Compile Include="Web\Ui\Ajax\DayPilotCalendarCallBack.cs" />
+    <Compile Include="Web\Ui\Ajax\ScriptManagerHelper.cs" />
+    <Compile Include="Web\Ui\Block.cs" />
+    <Compile Include="Web\Ui\Column.cs" />
+    <Compile Include="Web\Ui\Enums\Calendar\ViewTypeEnum.cs" />
+    <Compile Include="Web\Ui\Enums\CallBackUpdateType.cs" />
+    <Compile Include="Web\Ui\Enums\UserActionHandling.cs" />
+    <Compile Include="Web\Ui\Events\CommandEvent.cs" />
+    <Compile Include="Web\Ui\Events\DayPilotEventArgs.cs" />
+    <Compile Include="Web\Ui\Events\EventMoveEvent.cs" />
+    <Compile Include="Web\Ui\Events\EventResizeEvent.cs" />
+    <Compile Include="Web\Ui\Events\EventSource.cs" />
+    <Compile Include="Web\Ui\Events\Scheduler\BeforeResHeaderRender.cs" />
+    <Compile Include="Web\Ui\Init\JsInit.cs" />
+    <Compile Include="Web\Ui\JsInitCalendar.cs" />
+    <Compile Include="Web\Ui\Json\IJsonWrapper.cs" />
+    <Compile Include="Web\Ui\Json\JSONArray.cs" />
+    <Compile Include="Web\Ui\Json\JsonData.cs" />
+    <Compile Include="Web\Ui\Json\JSONObject.cs" />
+    <Compile Include="Web\Ui\Json\JsonWriter.cs" />
+    <Compile Include="Web\Ui\Json\SimpleJsonDeserializer.cs" />
+    <Compile Include="Web\Ui\Json\SimpleJsonSerializer.cs" />
+    <Compile Include="Web\Ui\RowHeaderColumn.cs" />
+    <Compile Include="Web\Ui\RowHeaderColumnCollection.cs" />
+    <Compile Include="Web\Ui\Data\TitleCollectionParser.cs" />
+    <Compile Include="Web\Ui\Data\DataItemWrapper.cs" />
+    <Compile Include="Web\Ui\Data\WidthCollectionParser.cs" />
+    <Compile Include="Web\Ui\Day.cs" />
+    <Compile Include="Web\Ui\DayPilotCalendar.cs" />
+    <Compile Include="Web\Ui\DayPilotScheduler.cs" />
+    <Compile Include="Web\Ui\Design\DayPilotCalendarDesigner.cs" />
+    <Compile Include="Web\Ui\Enums\GroupByEnum.cs" />
+    <Compile Include="Web\Ui\Enums\HeightSpecEnum.cs" />
+    <Compile Include="Web\Ui\Enums\TimeRangeSelectedHandling.cs" />
+    <Compile Include="Web\Ui\Enums\EventClickHandlingEnum.cs" />
+    <Compile Include="Web\Ui\Enums\Scheduler\ViewTypeEnum.cs" />
+    <Compile Include="Web\Ui\Event.cs" />
+    <Compile Include="Web\Ui\EventComparer.cs" />
+    <Compile Include="Web\Ui\Events\BeforeHeaderRender.cs" />
+    <Compile Include="Web\Ui\Events\Calendar\BeforeEventRender.cs" />
+    <Compile Include="Web\Ui\Events\EventClickEvent.cs" />
+    <Compile Include="Web\Ui\Events\Scheduler\BeforeEventRender.cs" />
+    <Compile Include="Web\Ui\Events\Scheduler\RowHeaderColumnWidthChanged.cs" />
+    <Compile Include="Web\Ui\Events\TimeRangeSelectedEvent.cs" />
+    <Compile Include="Web\Ui\Resource.cs" />
+    <Compile Include="Web\Ui\ResourceCollection.cs" />
+    <Compile Include="Web\Ui\ResourceColumn.cs" />
+    <Compile Include="Web\Ui\Serialization\RowHeaderColumnCollectionConverter.cs" />
+    <Compile Include="Web\Ui\Serialization\ResourceCollectionConverter.cs" />
+    <Compile Include="Web\Ui\Enums\TimeFormat.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Splitter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="daypilotlite.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Calendar.js" />
+    <EmbeddedResource Include="Resources\Common.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

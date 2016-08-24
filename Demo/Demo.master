@@ -1,0 +1,79 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Demo.master.cs" Inherits="Demo" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <link type="text/css" href='Themes/calendar_g.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/calendar_green.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/calendar_white.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/calendar_transparent.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/calendar_traditional.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/scheduler_green.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/scheduler_white.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/scheduler_transparent.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/scheduler_traditional.css' rel="stylesheet" />    
+    <link type="text/css" href='Themes/scheduler_8.css' rel="stylesheet" />    
+    <link type="text/css" href='Media/layout.css' rel="stylesheet" />    
+	<asp:contentplaceholder id="ContentPlaceHolderHeader" runat="server"></asp:contentplaceholder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+			<div class="bg-help">
+				<div class="inBox">
+					<h1 id="logo"><a href='http://www.daypilot.org/daypilot-lite.html'>DayPilot Lite for ASP.NET</a> &raquo; <a href='<%= ResolveUrl("~/") %>'>Demo</a></h1>
+					<p id="claim">AJAX Outlook-Like Calendar/Scheduling Controls for ASP.NET 2.0+</p>
+					<hr class="hidden" />
+				</div>
+			</div>
+		</div>
+		
+    <div id="download">
+            <div>
+                <div><a href="http://www.daypilot.org/download/">Download</a> DayPilot Lite (open-source).</div>
+                <div>See also the advanced features of <a href="http://www.daypilot.org/demo/">DayPilot Pro</a> (commercial).</div>
+            </div>
+        
+    </div>
+
+    <div id="main">
+        <div id="tabs">
+            <div>
+           	    <asp:Repeater id="Repeater1" runat="server" DataSource="<%# Tabs %>">
+		            <ItemTemplate><asp:PlaceHolder 
+		                ID="PlaceHolder1" runat="server" Visible='<%# DataBinder.Eval(Container, "DataItem.url") != DBNull.Value %>'><a class='<%# DataBinder.Eval(Container, "DataItem.class")%>' href='<%# DataBinder.Eval(Container, "DataItem.url")%>'><span style="width: 100px; text-align:center;"><%# DataBinder.Eval(Container, "DataItem.title")%></span></a></asp:PlaceHolder></ItemTemplate>
+	            </asp:Repeater>
+                <a class='tab pro' href='http://www.daypilot.org/demo/'><span style='width: 100px; text-align:center;'>DayPilot Pro</span></a>
+
+            </div>
+            <div class="header"><div class="bg-help"><%= Description %></div></div>
+        </div>
+        
+        <div id="container" >
+	        <div id="left" class="menu">
+       	        <asp:Repeater id="Repeater2" runat="server" DataSource="<%# Items %>" Visible="<%# MenuVisible %>" >
+    		        <ItemTemplate>
+                        <asp:PlaceHolder ID="PlaceHolder3" runat="server" Visible='<%# DataBinder.Eval(Container, "DataItem.url") != DBNull.Value %>'>
+		    	            <div>
+			    	            <a href='<%# DataBinder.Eval(Container, "DataItem.url")%>' class='<%# DataBinder.Eval(Container, "DataItem.class")%>'>
+				    	            <span><%# DataBinder.Eval(Container, "DataItem.title")%></span>
+    				            </a>
+	    		            </div>
+		                </asp:PlaceHolder>
+			            <asp:PlaceHolder ID="PlaceHolder4" runat="server" Visible='<%# DataBinder.Eval(Container, "DataItem.url") ==  DBNull.Value %>'>
+			                <div class="header"><%# DataBinder.Eval(Container, "DataItem.title")%></div>
+			            </asp:PlaceHolder>
+		            </ItemTemplate>
+	            </asp:Repeater>
+            </div>
+	        <div id="content">
+	            <div>
+                    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                    </asp:contentplaceholder>
+                </div>
+	        </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
